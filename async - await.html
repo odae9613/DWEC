@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>EJERCICIO: Consumo de API con JavaScript</title> -->
+    <title>async - await</title>
+</head>
+<body>
+    <b>Nombre del Post: </b><span id="txtNombrePost"></span><br>
+    <b>¿Esta completo?</b><span id="txtCompleto"></span>
+    <script>
+       async function jsonCargado(){
+            try {
+                const result = await fetch('https://jsonplaceholder.typicode.com/todos/2');
+                const datos = await result.json();
+                //alert(datos);
+                //  NOMBRE DEL POST
+                let spanNombrePost = document.getElementById("txtNombrePost");
+                spanNombrePost.innerText = datos.title;
+
+                //  ESTADO DEL POST
+                let spanCompleto = document.getElementById("txtCompleto");
+                if(result.completed){
+                    spanCompleto.innerText = "Esta completo";
+                } else {
+                    spanCompleto.innerText = "Esta incompleto";
+                }
+            } catch (error){
+                alert('ERROR');
+            }
+       }
+       jsonCargado();
+    </script>
+</body>
+</html>
