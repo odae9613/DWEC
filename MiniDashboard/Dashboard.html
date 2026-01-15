@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini dashboard</title>
+    <script src = "dashboard.js"></script>
+    <link rel = "stylesheet" href = "dashboard.css">
+</head>
+<body>
+    <h1>Mini-dashboard: Consumo de API pública</h1>
+    <p>Busca un personaje por ID usando callback, promesas o async/await</p>
+    <div id = "cuadroFicha">
+        <p>ID personaje: <input type = "text" id="ingresarID"></p>
+        <!--    INICIO BOTONES   -->
+        <button id="cargarCallback">Buscar (Callback)</button>
+        <button id="cargarPromises">Buscar (Promises)</button>
+        <button id="cargarAsyncAwait">Buscar (Async/Await)</button>
+        <button id="limpiar">Limpiar</button>
+        <!--    FIN BOTONES -->
+        <div id="cargandoDatos"></div>
+        <div id = "fichaDatos">
+            <h2 id = "Nombre"></h2>
+            <p>
+                <span id = "especie">Especie</span>
+                <span id = "estado">Estado</span>
+            </p>
+            <img id = "imagen"></img>
+            <p  id = "origen"></p>
+            <p id = "numeroEpisodios"></p>
+            <p id = "primerEpisodio"></p>
+        </div>
+        <div>API</div>
+    </div>
+</body>
+</html>
